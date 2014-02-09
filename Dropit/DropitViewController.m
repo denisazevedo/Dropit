@@ -19,6 +19,14 @@
 
 static const CGSize DROP_SIZE = {40, 40};
 
+- (DropitBehavior *)dropitBehavior {
+    if (!_dropitBehavior) {
+        _dropitBehavior = [[DropitBehavior alloc] init];
+        [self.animator addBehavior:_dropitBehavior];
+    }
+    return _dropitBehavior;
+}
+
 - (UIDynamicAnimator *)animator {
     if (!_animator) {
         _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.gameView];
@@ -57,6 +65,7 @@ static const CGSize DROP_SIZE = {40, 40};
             [self.dropitBehavior removeItem:drop];
         }
         [self animateRemovingDrops:dropsToRemove];
+        return YES;
     }
     
     return NO;
@@ -76,14 +85,6 @@ static const CGSize DROP_SIZE = {40, 40};
                      }];
 }
 
-- (DropitBehavior *)dropitBehavior {
-    if (!_dropitBehavior) {
-        _dropitBehavior = [[DropitBehavior alloc] init];
-        [self.animator addBehavior:_dropitBehavior];
-    }
-    return _dropitBehavior;
-}
-
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
     [self drop];
 }
@@ -93,7 +94,7 @@ static const CGSize DROP_SIZE = {40, 40};
     frame.origin = CGPointZero;
     frame.size = DROP_SIZE;
     
-    int x = (arc4random() % (int)self.gameView.bounds.size.width) / DROP_SIZE.width;
+    int x = (arc4random()%(int)self.gameView.bounds.size.width) / DROP_SIZE.width;
     frame.origin.x = x * DROP_SIZE.width;
     
     UIView *dropView = [[UIView alloc] initWithFrame:frame];
@@ -111,12 +112,7 @@ static const CGSize DROP_SIZE = {40, 40};
         case 3: return [UIColor redColor];
         case 4: return [UIColor purpleColor];
     }
-    return [UIColor blueColor];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+    return [UIColor blackColor];
 }
 
 @end

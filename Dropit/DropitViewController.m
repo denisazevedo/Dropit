@@ -7,15 +7,33 @@
 //
 
 #import "DropitViewController.h"
+#import "DropitBehavior.h"
 
 @interface DropitViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *gameView;
+@property (strong, nonatomic) UIDynamicAnimator *animator;
+@property (strong, nonatomic) DropitBehavior *dropipBehavior;
 @end
 
 @implementation DropitViewController
 
 static const CGSize DROP_SIZE = {40, 40};
+
+- (UIDynamicAnimator *)animator {
+    if (!_animator) {
+        _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.gameView];
+    }
+    return _animator;
+}
+
+- (DropitBehavior *)dropipBehavior {
+    if (!_dropipBehavior) {
+        _dropipBehavior = [[DropitBehavior alloc] init];
+        [self.animator addBehavior:_dropipBehavior];
+    }
+    return _dropipBehavior;
+}
 
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
     [self drop];
@@ -31,8 +49,9 @@ static const CGSize DROP_SIZE = {40, 40};
     
     UIView *dropView = [[UIView alloc] initWithFrame:frame];
     dropView.backgroundColor = [self randomColor];
-    
     [self.gameView addSubview:dropView];
+    
+    [self.dropipBehavior addItem:dropView];
 }
 
 - (UIColor *)randomColor {

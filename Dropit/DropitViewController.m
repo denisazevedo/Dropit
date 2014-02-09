@@ -12,7 +12,7 @@
 @interface DropitViewController () <UIDynamicAnimatorDelegate>
 @property (weak, nonatomic) IBOutlet UIView *gameView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
-@property (strong, nonatomic) DropitBehavior *dropipBehavior;
+@property (strong, nonatomic) DropitBehavior *dropitBehavior;
 @end
 
 @implementation DropitViewController
@@ -54,7 +54,7 @@ static const CGSize DROP_SIZE = {40, 40};
     
     if ([dropsToRemove count]) {
         for (UIView *drop in dropsToRemove) {
-            [self.dropipBehavior removeItem:drop];
+            [self.dropitBehavior removeItem:drop];
         }
         [self animateRemovingDrops:dropsToRemove];
     }
@@ -68,7 +68,6 @@ static const CGSize DROP_SIZE = {40, 40};
                          for (UIView *drop in dropsToRemove) {
                              int x = (arc4random()%(int)(self.gameView.bounds.size.width*5)) - (int)self.gameView.bounds.size.width*2;
                              int y = self.gameView.bounds.size.height;
-                             NSLog(@"x: %d / y: %d", x, y);
                              drop.center = CGPointMake(x, -y);
                          }
                      }
@@ -77,12 +76,12 @@ static const CGSize DROP_SIZE = {40, 40};
                      }];
 }
 
-- (DropitBehavior *)dropipBehavior {
-    if (!_dropipBehavior) {
-        _dropipBehavior = [[DropitBehavior alloc] init];
-        [self.animator addBehavior:_dropipBehavior];
+- (DropitBehavior *)dropitBehavior {
+    if (!_dropitBehavior) {
+        _dropitBehavior = [[DropitBehavior alloc] init];
+        [self.animator addBehavior:_dropitBehavior];
     }
-    return _dropipBehavior;
+    return _dropitBehavior;
 }
 
 - (IBAction)tap:(UITapGestureRecognizer *)sender {
@@ -101,7 +100,7 @@ static const CGSize DROP_SIZE = {40, 40};
     dropView.backgroundColor = [self randomColor];
     [self.gameView addSubview:dropView];
     
-    [self.dropipBehavior addItem:dropView];
+    [self.dropitBehavior addItem:dropView];
 }
 
 - (UIColor *)randomColor {

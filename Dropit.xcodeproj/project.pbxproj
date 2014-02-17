@@ -467,6 +467,7 @@
 				6A3BA15618A7BFC90039B27B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A3BA15718A7BFC90039B27B /* Build configuration list for PBXNativeTarget "DropitTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +476,7 @@
 				6A3BA15918A7BFC90039B27B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

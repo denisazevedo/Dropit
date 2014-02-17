@@ -22,6 +22,7 @@
 		6A3BA14F18A7BFC90039B27B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A3BA14D18A7BFC90039B27B /* InfoPlist.strings */; };
 		6A3BA15118A7BFC90039B27B /* DropitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3BA15018A7BFC90039B27B /* DropitTests.m */; };
 		6A3BA15C18A7C8950039B27B /* DropitBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3BA15B18A7C8950039B27B /* DropitBehavior.m */; };
+		6A89A80618B2983C00A6543C /* BezierPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A89A80518B2983C00A6543C /* BezierPathView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		6A3BA15018A7BFC90039B27B /* DropitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropitTests.m; sourceTree = "<group>"; };
 		6A3BA15A18A7C8950039B27B /* DropitBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropitBehavior.h; sourceTree = "<group>"; };
 		6A3BA15B18A7C8950039B27B /* DropitBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropitBehavior.m; sourceTree = "<group>"; };
+		6A89A80418B2983C00A6543C /* BezierPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierPathView.h; sourceTree = "<group>"; };
+		6A89A80518B2983C00A6543C /* BezierPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierPathView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				6A3BA13718A7BFC90039B27B /* Main.storyboard */,
+				6A89A80418B2983C00A6543C /* BezierPathView.h */,
+				6A89A80518B2983C00A6543C /* BezierPathView.m */,
 				6A3BA13A18A7BFC90039B27B /* DropitViewController.h */,
 				6A3BA13B18A7BFC90039B27B /* DropitViewController.m */,
 				6A3BA15A18A7C8950039B27B /* DropitBehavior.h */,
@@ -259,6 +264,7 @@
 				6A3BA15C18A7C8950039B27B /* DropitBehavior.m in Sources */,
 				6A3BA13618A7BFC90039B27B /* DropitAppDelegate.m in Sources */,
 				6A3BA13218A7BFC90039B27B /* main.m in Sources */,
+				6A89A80618B2983C00A6543C /* BezierPathView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
